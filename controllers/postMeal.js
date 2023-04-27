@@ -5,7 +5,7 @@ const File = require("../models/file");
 class MealController {
     static async Execute(req, res) {
 
-        const { name, quantity, calories, protein, fat, carbs } = req.body;
+        const { name, quantity, calories, protein, fat, carbs,sodium,pottasium,magnesium,vitamin_c,cholestrol } = req.body;
 
         if (!name ||
             !quantity ||
@@ -13,6 +13,11 @@ class MealController {
             !protein ||
             !fat ||
             !carbs ||
+            !sodium ||
+            !pottasium||
+            !magnesium||
+            !vitamin_c||
+            !cholestrol||
             !req.file) {
             res.status(400).json({
                 message: `Invalid Request`,
@@ -35,6 +40,11 @@ class MealController {
                     protein: protein,
                     fat: fat,
                     carbs: carbs,
+                    pottasium:pottasium,
+                    sodium:sodium,
+                    magnesium:magnesium,
+                    vitamin_c:vitamin_c,
+                    cholestrol:cholestrol,
                     file: result._id,
                 }).then(() => {
                     res.status(200).json({
