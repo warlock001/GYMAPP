@@ -25,6 +25,22 @@ const MealSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
+    sodium:{
+        type: Number,
+        required: true,
+    },
+    pottasium:{
+        type: Number,
+        required: true,
+    },
+    magnesium:{
+        type: Number,
+        required: true,
+    },
+    cholestrol:{
+        type: Number,
+        required: true,
+    },
     file: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "File",
