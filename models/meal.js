@@ -29,6 +29,10 @@ const MealSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
+    vitamin_c:{
+        type:Number,
+        required:true
+    },
     pottasium:{
         type: Number,
         required: true,
