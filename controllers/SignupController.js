@@ -11,13 +11,14 @@ class SignupController {
       req.body?.email == undefined ||
       req.body?.dialCode == undefined ||
       req.body?.mobile == undefined ||
+      req.body?.gender == undefined ||
       req.body?.role == undefined
     ) {
       res.status(400).json({
         message: `Invalid Request`,
       });
     } else {
-      const { name, email, dialCode, mobile, role } = req.body;
+      const { name, email, dialCode, mobile, role, gender } = req.body;
 
       const user = new User({
         name: name.trim(),
@@ -25,6 +26,7 @@ class SignupController {
         mobile: mobile.trim(),
         isVerified: false,
         dialCode: dialCode,
+        gender: gender,
         role: role.trim(),
       });
 
